@@ -1,11 +1,13 @@
 import 'package:e_commerce/app/app_configs.dart';
 import 'package:e_commerce/features/auth/ui/screens/sign_in_screen.dart';
+import 'package:e_commerce/features/common/ui/screens/main_bottom_nav_bar_screen.dart';
 import 'package:e_commerce/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import '../widget/app_logo.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
   static const String name = '/';
 
   @override
@@ -13,22 +15,21 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
     _moveToNextScreen();
   }
 
-  Future<void> _moveToNextScreen() async{
+  Future<void> _moveToNextScreen() async {
     await Future.delayed(const Duration(seconds: 2));
-    Navigator.pushReplacementNamed(context, SignInScreen.name);
+    Navigator.pushReplacementNamed(context, MainBottomNavBarScreen.name);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Center(
+      body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -37,12 +38,13 @@ class _SplashScreenState extends State<SplashScreen> {
               const AppLogo(),
               const Spacer(),
               const CircularProgressIndicator(),
-              Text('${AppLocalizations.of(context)!.version} ${AppConfigs.currentAppVersion}')
+              Text(
+                '${AppLocalizations.of(context)!.version} ${AppConfigs.currentAppVersion}',
+              ),
             ],
           ),
         ),
-      )
+      ),
     );
   }
 }
-

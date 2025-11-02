@@ -133,6 +133,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign in'**
   String get signIn;
+
+  /// No description provided for @signUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up'**
+  String get signUp;
+
+  /// No description provided for @registerYourAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Register your account'**
+  String get registerYourAccount;
+
+  /// No description provided for @getStartedWithYourDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Get started with your details'**
+  String get getStartedWithYourDetails;
+
+  /// No description provided for @firstName.
+  ///
+  /// In en, this message translates to:
+  /// **'First Name'**
+  String get firstName;
+
+  /// No description provided for @lastName.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Name'**
+  String get lastName;
+
+  /// No description provided for @mobile.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile'**
+  String get mobile;
+
+  /// No description provided for @deliveryAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Address'**
+  String get deliveryAddress;
+
+  /// No description provided for @enterOtpCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter OTP Code'**
+  String get enterOtpCode;
+
+  /// No description provided for @digitOtp.
+  ///
+  /// In en, this message translates to:
+  /// **'A 4 Digit OTP Code has been Sent'**
+  String get digitOtp;
 }
 
 class _AppLocalizationsDelegate

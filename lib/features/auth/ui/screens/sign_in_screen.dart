@@ -1,9 +1,10 @@
 import 'package:e_commerce/app/app_colors.dart';
 import 'package:e_commerce/core/extensions/localization_extension.dart';
 import 'package:e_commerce/features/auth/ui/widget/app_logo.dart';
-import 'package:e_commerce/l10n/app_localizations.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
+import 'sign_up_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -30,46 +31,56 @@ class _SignInScreenState extends State<SignInScreen> {
               const AppLogo(),
               const SizedBox(height: 16),
               Text(
-                  context.localization.welcomeBack,
-                  style: textTheme.titleLarge),
+                context.localization.welcomeBack,
+                style: textTheme.titleLarge,
+              ),
               const SizedBox(height: 8),
-              Text(context.localization.enterYourEmailAndPassword,
+              Text(
+                context.localization.enterYourEmailAndPassword,
                 style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
               TextFormField(
+                textInputAction: TextInputAction.next,
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                  hintText: context.localization.email
+                  hintText: context.localization.email,
                 ),
-                /*
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(horizontal: 16),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.themColor),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.green, //AppColors.themColor
-                    ),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red),
-                  ),
-                ),
-                */
               ),
-              const SizedBox(height: 8,),
+              const SizedBox(height: 8),
               TextFormField(
+                obscureText: true,
                 decoration: InputDecoration(
-                  hintText: context.localization.password
+                  hintText: context.localization.password,
                 ),
               ),
               const SizedBox(height: 16),
               ElevatedButton(
-                  onPressed: () {
-                    FirebaseCrashlytics.instance.log('Enter sign in button');
-                    throw Exception('My custom error');
-                  },
-                  child: Text(context.localization.signIn)),
+                onPressed: () {},
+                child: Text(context.localization.signIn),
+              ),
+              const SizedBox(height: 16),
+              RichText(
+                text: TextSpan(
+                  text: "Don't have an account? ",
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: 'Sign up',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.themColor,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.pushNamed(context, SignUpScreen.name);
+                        },
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
