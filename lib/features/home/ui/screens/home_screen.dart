@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import '../../../common/ui/widget/category_item.dart';
 import '../widgets/home_carousel_slider.dart';
-import '../widgets/product_card.dart';
+import '../../../common/ui/widget/product_card.dart';
 import '../widgets/section_header.dart';
 
 class HomeScreen extends StatefulWidget {
